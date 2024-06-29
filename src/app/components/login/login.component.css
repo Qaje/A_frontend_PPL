@@ -1,0 +1,16 @@
+.ng-invalid:not(form) {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.ng-valid:not(form) {
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+.alert {
+    color: red;
+    font-size: 10px;
+    font-style: oblique;
+    background-color: pink;
+}
