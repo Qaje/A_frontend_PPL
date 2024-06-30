@@ -16,5 +16,6 @@ export class LoginComponent {
   ingresado = false;
   ingreso() {
     this.ingresado = true;
+    console.log(this.login);
   }
 }

@@ -1,1 +1,47 @@
-<p>signup works!</p>
+<div class="my-auto" style="width: 500px;">
+    <div class="card ">
+        <div class="card-header ">
+            Formulario de Registro
+        </div>
+        <div class="card-body" [hidden]="registrado">
+                <form (ngSubmit)="registrar()" #registerForm="ngForm">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Nombre</label>
+                        <input type="name" class="form-control" [(ngModel)]="register.name" name="name" id="name" placeholder="Ingrese su nombre" required #name="ngModel">
+                        <div [hidden]="name.valid" class="alert">
+                          El nombre de usuario es requerido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1">Correo</label>
+                        <input type="email" class="form-control" [(ngModel)]="register.email" name="email" id="email" placeholder="Ingrese su correo" required #email="ngModel">
+                        <div [hidden]="email.valid" class="alert">
+                            El correo es requerido.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Contraseña</label>
+                        <input type="password" class="form-control" [(ngModel)]="register.password"  name="password" id="password"  placeholder="Ingrese su contraseña" required #password="ngModel">
+                        <div [hidden]="password.valid" class="alert">
+                            La contraseña es requerida.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" [(ngModel)]="register.conf_password"  name="conf_password" id="conf_password"  placeholder="Confirmar contraseña" required #confpassword="ngModel">
+                        <div [hidden]="confpassword.valid" class="alert">
+                            La contraseña es requerida.
+                        </div>
+                    </div>
+
+                  {{register.email}} {{register.password}}
+                
+                <button type="submit" [disabled]="registerForm.form.invalid" class="btn btn-success">Ingresar</button>
+            </form>
+        </div>
+        <div [hidden]="registrado==false" >
+           <h6> Bienvenido al sistema web {{register.email}} .</h6>
+        </div>  
+
+    </div>
+</div>
